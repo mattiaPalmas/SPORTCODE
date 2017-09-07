@@ -2,6 +2,9 @@ package com.exerciseapp.mattiapalmas.sportcode;
 
 import android.content.Context;
 import android.graphics.Typeface;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +22,9 @@ public class ExpandableMenuAdapter extends BaseExpandableListAdapter {
 
     private Context context;
     private List<String> menuDataHeader;
-    private HashMap<String,List<String>> listHashMap;
+    private HashMap<String,List<Spanned>> listHashMap;
 
-    public ExpandableMenuAdapter(Context context, List<String> menuDataHeader, HashMap<String, List<String>> listHashMap) {
+    public ExpandableMenuAdapter(Context context, List<String> menuDataHeader, HashMap<String, List<Spanned>> listHashMap) {
         this.context = context;
         this.menuDataHeader = menuDataHeader;
         this.listHashMap = listHashMap;
@@ -78,7 +81,7 @@ public class ExpandableMenuAdapter extends BaseExpandableListAdapter {
 
     @Override
     public View getChildView(int i, int i1, boolean b, View view, ViewGroup viewGroup) {
-        final String childText = (String) getChild(i,i1);
+        final Spanned childText = (Spanned) getChild(i,i1);
 
         if(view==null) {
             LayoutInflater inflater = (LayoutInflater) this.context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
@@ -86,16 +89,8 @@ public class ExpandableMenuAdapter extends BaseExpandableListAdapter {
         }
 
         TextView txtListChild = (TextView) view.findViewById(R.id.list_item);
-        TextView txtListChild2 = (TextView) view.findViewById(R.id.list_item2);
         txtListChild.setText(childText);
-        switch (i){
-            case 0 :
-                txtListChild2.setText("Exemple that i can add more rows if i need");
-                break;
-            case 1 :
-                txtListChild2.setText("here i'm changeinf the history");
-                break;
-        }
+
         return view;
 
     }
@@ -104,4 +99,6 @@ public class ExpandableMenuAdapter extends BaseExpandableListAdapter {
     public boolean isChildSelectable(int i, int i1) {
         return true;
     }
+
+
 }
