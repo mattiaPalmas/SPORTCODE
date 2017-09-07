@@ -4,12 +4,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/green"
+    android:orientation="vertical"
+    android:paddingBottom="30dp"
+    android:paddingLeft="20dp"
+    android:paddingRight="20dp"
+    android:gravity="center"
     tools:context="com.exerciseapp.mattiapalmas.sportcode.DetailSportActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <ImageView
+            android:id="@+id/imgSport1"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:paddingRight="30dp" />
+
+        <TextView
+            android:id="@+id/titleSport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_weight="4"
+            android:background="#ffffff"
+            android:padding="5dp"
+            android:text="Soccer"
+            android:textAlignment="center"
+            android:textColor="@color/colorPrimary"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imgSport2"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:paddingLeft="30dp" />
+
+    </LinearLayout>
 
     <ExpandableListView
         android:id="@+id/expanded_menu"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    </ExpandableListView>
+        android:layout_height="match_parent"></ExpandableListView>
 </LinearLayout>
