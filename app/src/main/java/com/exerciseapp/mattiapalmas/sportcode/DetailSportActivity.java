@@ -65,11 +65,13 @@ public class DetailSportActivity extends AppCompatActivity {
                 sportImg1.setBackgroundResource(R.drawable.baseball);
                 sportImg2.setBackgroundResource(R.drawable.baseball);
                 titleSport.setText("Baseball");
+                setBaseballInfo();
                 break;
             case "boxing" :
                 sportImg1.setBackgroundResource(R.drawable.boxing);
                 sportImg2.setBackgroundResource(R.drawable.boxing);
                 titleSport.setText("Boxing");
+                setBoxingInfo();
                 break;
             case "americanFootball" :
                 sportImg1.setBackgroundResource(R.drawable.americanfootball);
@@ -360,6 +362,166 @@ public class DetailSportActivity extends AppCompatActivity {
         listHash.put(listTitleHeader.get(0),scoring);
         listHash.put(listTitleHeader.get(1),officials);
         listHash.put(listTitleHeader.get(2),courtLines);
+        listHash.put(listTitleHeader.get(3),moreInfo);
+    }
+
+    private void setBaseballInfo() {
+        listTitleHeader.add("Overview");
+        listTitleHeader.add("Player rosters");
+        listTitleHeader.add("No clock to kill");
+        listTitleHeader.add("moreInfo");
+
+
+        List<Spanned> overview = new ArrayList<>();
+        String str1 = "A game is played between two teams, each composed of nine players, that take turns playing offense " +
+                "(batting and baserunning) and defense (pitching and fielding). A <b>pair of turns</b>, one at bat and one in the" +
+                " field, by each team constitutes an inning.<br><br> A game consists of <b>nine innings</b> (seven innings at the high" +
+                " school level and in doubleheaders in college and minor leagues). One team—customarily the visiting team—bats" +
+                " in the top, or first half, of every inning. <br><br>The other team—customarily the home team—bats in the" +
+                " bottom, or second half, of every inning. The goal of the game is to score more points (runs) than the other" +
+                " team. The players on the team at bat attempt to score runs by circling or completing a tour of the four b" +
+                "ases set at the corners of the square-shaped baseball diamond.<br><br> A player bats at home plate and must " +
+                "proceed counterclockwise to <b>first base, second base, third base, and back home</b> in order to score a run. The " +
+                "team in the field attempts both to prevent runs from scoring and to record outs, which remove opposing players" +
+                " from offensive action until their turn in their team's batting order comes up again.<br><br> When <b>three outs</b>" +
+                " are recorded, the teams switch roles for the next half-inning. If the score of the game is tied after nine " +
+                "innings, extra innings are played to resolve the contest. Many amateur games, particularly unorganized ones," +
+                " involve different numbers of players and innings.";
+        overview.add(fromHtml(str1));
+
+        List<Spanned> player = new ArrayList<>();
+        String str2 = "Roster, or squad, sizes differ between different leagues and different levels of organized play. Major" +
+                " League Baseball teams maintain <b>25-player</b> active rosters.<br>A typical 25-man roster in a league without" +
+                " the DH rule, such as MLB's National League, features:<br><br>" +
+                "• eight position players—catcher, four infielders, three outfielders—who play on a regular basis\n" +
+                "<br><br>• five <b>starting pitchers</b> who constitute the team's pitching rotation or starting rotation\n" +
+                "<br><br>• six <b>relief pitchers</b>, including one specialist closer, who constitute the team's bullpen (named for the off-field area where pitchers warm up)\n" +
+                "<br><br>• one <b>backup catcher</b>" +
+                "<br><br>• two <b>backup infielders</b>" +
+                "<br><br>• two <b>backup outfielders</b>" +
+                "<br><br>• one specialist pinch hitter, or a second backup catcher, or a seventh reliever\n" +
+                "In the American League and others with the DH rule, there will usually be nine offensive regulars (including the DH), " +
+                "five starting pitchers, seven or eight relievers, a backup catcher and two or three other reserves; the need for late inning pinch-hitters is reduced by the DH.";
+        player.add(fromHtml(str2));
+
+        List<Spanned> clock = new ArrayList<>();
+        String str3 = "In clock-limited sports, games often end with a team that holds the lead killing the clock rather than" +
+                " competing aggressively against the opposing team.<br> In contrast, <b>baseball has no clock</b>; a team cannot" +
+                " win without getting the last batter out and rallies are not constrained by time." +
+                " At almost any turn in any baseball game, the most advantageous strategy is some form of aggressive strategy.<br><br>" +
+                " In contrast, again, the clock comes into play even in the case of multi-day Test and first-class cricket:" +
+                " the possibility of a draw often encourages a team that is batting last and well behind to bat defensively," +
+                " giving up any faint chance at a win to avoid a loss.[133] Baseball offers no such reward for conservative batting.";
+        clock.add(fromHtml(str3));
+
+        List<Spanned> moreInfo = new ArrayList<>();
+        String str4 = "<string name=\"my_link\"><a href=\"https://en.wikipedia.org/wiki/baseball\">Baseball Wikipedia</a></string>";
+        moreInfo.add(fromHtml(str4));
+
+        listHash.put(listTitleHeader.get(0),overview);
+        listHash.put(listTitleHeader.get(1),player);
+        listHash.put(listTitleHeader.get(2),clock);
+        listHash.put(listTitleHeader.get(3),moreInfo);
+    }
+
+    private void setBoxingInfo() {
+        listTitleHeader.add("Rules");
+        listTitleHeader.add("Boxing styles");
+        listTitleHeader.add("Punches");
+        listTitleHeader.add("moreInfo");
+
+
+        List<Spanned> rules = new ArrayList<>();
+        String str1 = "A boxing match typically consists of a determined number of three-minute rounds, " +
+                "a total of up to <b>9 to 12 rounds</b>. A minute is typically spent between each round with" +
+                " the fighters in their assigned corners receiving advice and attention from their coach and staff. " +
+                "<br>The fight is controlled by a referee who works within the ring to judge and control the conduct of " +
+                "the fighters, rule on their ability to fight safely, count knocked-down fighters, and rule on fouls." +
+                "<br><br>A bout in which the predetermined number of rounds passes is decided by the judges, and is said to" +
+                " \"go the distance\". The fighter with the higher score at the end of the fight is ruled the winner." +
+                " With three judges, <b>unanimous</b> and <b>split decisions</b> are possible, as are draws. <br>A boxer may win the bout before " +
+                "a decision is reached through a <b>knock-out</b>; such bouts are said to have ended \"inside the distance\". If a fighter is knocked down during the fight," +
+                " determined by whether the boxer touches the canvas floor of the ring with any part of their body other than" +
+                " the feet as a result of the opponent's punch and not a slip, as determined by the referee" +
+                ", the referee begins counting until the fighter returns to his or her feet and can continue. " +
+                "Some jurisdictions require the referee to count to eight regardless of if the fighter gets up before.";
+        rules.add(fromHtml(str1));
+
+        List<Spanned> style = new ArrayList<>();
+        String str2 = "\"<b>Style</b>\" is often defined as the strategic approach a fighter takes during a bout. No two fighters' " +
+                "styles are alike, as it is determined by that individual's physical and mental attributes." +
+                "<br><br>Three main styles exist in boxing: <b>outside fighter</b> (\"boxer\"), <b>brawler</b> (or \"slugger\"), " +
+                "and <b>Inside fighter</b> (\"swarmer\"). These styles may be divided into several special subgroups, such as" +
+                " counter puncher, etc. The main philosophy of the styles is, that each style has an advantage over one, but" +
+                " disadvantage over the other one. It follows the rock-paper-scissors scenario - boxer beats brawler, brawler" +
+                " beats swarmer, and swarmer beats boxer." +
+                "<br><br><b>Boxer/out-fighter</b>" +
+                "<br><br>A classic \"boxer\" or stylist (also known as an \"out-fighter\") seeks to maintain distance between himself" +
+                " and his opponent, fighting with <b>faster, longer range punches</b>," +
+                " most notably the jab, and gradually wearing his opponent down. Due to this reliance on weaker punches," +
+                " out-fighters <b>tend to win by point decisions</b> rather than by knockout, though some out-fighters have notable k" +
+                "nockout records. They are often regarded as the best boxing strategists due to their ability to control the pace" +
+                " of the fight and lead their opponent, methodically wearing him down and exhibiting more skill and finesse than " +
+                "a brawler. <b>Out-fighters need reach, hand speed, reflexes, and footwork</b>." +
+                "<br><br><b>Boxer-puncher</b>" +
+                "<br><br>A boxer-puncher is a well-rounded boxer who is able to fight at <b>close range with a combination of technique and power</b>," +
+                " often with the ability to knock opponents out with a combination and in some instances a single shot.<br>Their movement" +
+                " and tactics are similar to that of an out-fighter (although they are generally not as mobile as an out-fighter)," +
+                " but instead of winning by decision, they tend to wear their opponents down using combinations and then <b>move in to" +
+                " score the knockout</b>.<br>A boxer must be well rounded to be effective using this style." +
+                "<br><br><b>Brawler/slugger</b>" +
+                "<br><br>A brawler is a fighter who generally <b>lacks finesse and footwork</b> in the ring, but makes up for it through sheer" +
+                " punching power. Many brawlers tend to lack mobility, preferring a less mobile, more stable platform and have difficulty" +
+                " pursuing fighters who are fast on their feet. <br>They may also have a tendency to ignore combination punching in favor of" +
+                " continuous beat-downs with one hand and by throwing slower, <b>more powerful single punches</b> (such as hooks and uppercuts)." +
+                "<br>Their slowness and predictable punching pattern (single punches with obvious leads) often leaves them open to counter" +
+                " punches, so successful brawlers <b>must be able to absorb</b> substantial amounts of punishment. " +
+                "<br><br><b>Swarmer/in-fighter</b>" +
+                "<br><br>In-fighters/swarmers (sometimes called \"pressure fighters\") attempt to <b>stay close to an opponent</b>, throwing intense flurries" +
+                " and combinations of hooks and uppercuts. Mainly Mexican, Irish, Irish-American, Puerto Rican, and Mexican-American boxers" +
+                " popularized this style. A successful in-fighter often <b>needs a good \"chin\"</b> because swarming usually involves being hit" +
+                " with many jabs before they can maneuver inside where they are more effective.<br> In-fighters operate best at close range" +
+                " because they are generally shorter and have less reach than their opponents and thus are more effective at a short" +
+                " distance where the longer arms of their opponents make punching awkward. However, several fighters tall for their division" +
+                " have been relatively adept at in-fighting as well as out-fighting.";
+        style.add(fromHtml(str2));
+
+        List<Spanned> punches = new ArrayList<>();
+        String str3 = "There are four basic punches in boxing: the <b>jab</b>, <b>cross</b>, <b>hook</b> and <b>uppercut</b>. Any punch other than a jab " +
+                "is considered a <b>power punch</b>. If a boxer is right-handed (orthodox), his left hand is the lead hand and his right" +
+                " hand is the rear hand. For a left-handed boxer or southpaw, the hand positions are reversed. For clarity, the" +
+                " following discussion will assume a right-handed boxer." +
+                "<br><br><b>Jab</b>" +
+                "<br><br>A quick, straight punch thrown with the lead hand from the guard position. The jab is accompanied by a small," +
+                " clockwise rotation of the torso and hips, while the fist rotates 90 degrees, becoming horizontal upon impact." +
+                " <br>As the punch reaches <b>full extension</b>, the lead shoulder can be brought up to guard the chin. The rear hand remains" +
+                " next to the face to guard the jaw. After making contact with the target, the lead hand is retracted quickly to resume" +
+                " a <b>guard position</b> in front of the face." +
+                "<br><br><b>Cross</b>" +
+                "<br><br>A <b>powerful, straight punch thrown with the rear hand</b>. From the guard position, the rear hand is thrown from" +
+                " the chin, crossing the body and traveling towards the target in a straight line. The rear shoulder is thrust forward" +
+                " and finishes just touching the <b>outside of the chin</b>.<br> At the same time, the lead hand is retracted and tucked against" +
+                " the face to protect the inside of the chin. For <b>additional power</b>, the torso and hips are rotated counter-clockwise as" +
+                " the cross is thrown.<br>A measure of an ideally extended cross is that the shoulder of the striking arm, the knee of the" +
+                " front leg and the ball of the front foot are on the same vertical plane." +
+                "<br><br><b>Hook</b>" +
+                "<br><br>A <b>semi-circular punch</b> thrown with the lead hand to the side of the opponent's head. <b>From the guard position</b>, the elbow is drawn back" +
+                " with a horizontal fist (knuckles pointing forward) and the <b>elbow bent</b>. The rear hand is tucked firmly against the jaw" +
+                " to protect the chin. The torso and hips are rotated clockwise, propelling the fist through a tight, clockwise arc across" +
+                " the front of the body and connecting with the target." +
+                "<br><br><b>Uppercut</b>" +
+                "<br><br>A vertical, <b>rising punch</b> thrown with the <b>rear hand</b>. From the guard position, the torso shifts slightly to the right," +
+                " the rear hand drops below the level of the opponent's chest and the knees are bent slightly. From this position," +
+                " the rear hand is thrust <b>upwards</b> in a rising arc towards the opponent's chin or torso.";
+        punches.add(fromHtml(str3));
+
+        List<Spanned> moreInfo = new ArrayList<>();
+        String str4 = "<string name=\"my_link\"><a href=\"https://en.wikipedia.org/wiki/Boxing\">Boxing Wikipedia</a></string>";
+        moreInfo.add(fromHtml(str4));
+
+        listHash.put(listTitleHeader.get(0),rules);
+        listHash.put(listTitleHeader.get(1),style);
+        listHash.put(listTitleHeader.get(2),punches);
         listHash.put(listTitleHeader.get(3),moreInfo);
     }
 
