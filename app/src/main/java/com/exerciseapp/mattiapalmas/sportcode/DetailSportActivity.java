@@ -77,21 +77,25 @@ public class DetailSportActivity extends AppCompatActivity {
                 sportImg1.setBackgroundResource(R.drawable.americanfootball);
                 sportImg2.setBackgroundResource(R.drawable.americanfootball);
                 titleSport.setText("American Football");
+                setAmericanFootballInfo();
                 break;
             case "golf" :
                 sportImg1.setBackgroundResource(R.drawable.golf);
                 sportImg2.setBackgroundResource(R.drawable.golf);
                 titleSport.setText("Golf");
+                setGolfInfo();
                 break;
             case "hockey" :
                 sportImg1.setBackgroundResource(R.drawable.hokey);
                 sportImg2.setBackgroundResource(R.drawable.hokey_);
                 titleSport.setText("hockey");
+                setHockeyInfo();
                 break;
             case "waterpolo" :
                 sportImg1.setBackgroundResource(R.drawable.waterpolo);
                 sportImg2.setBackgroundResource(R.drawable.waterpolo);
                 titleSport.setText("Waterpolo");
+                setWaterpoloInfo();
                 break;
         }
     }
@@ -107,7 +111,6 @@ public class DetailSportActivity extends AppCompatActivity {
         listTitleHeader.add("Fouls and Misconduct");
         listTitleHeader.add("Domestic competition");
         listTitleHeader.add("International competition");
-        listTitleHeader.add("More info");
 
         // Basic rules
         List<Spanned> basicRules = new ArrayList<>();
@@ -214,15 +217,11 @@ public class DetailSportActivity extends AppCompatActivity {
                 " in South America. The winners of each continental competition contest the FIFA Club World Cup.</p>";
         competitonInt.add(fromHtml(str4));
 
-        List<Spanned> moreInfo = new ArrayList<>();
-        String str5 = "<string name=\"my_link\"><a href=\"https://en.wikipedia.org/wiki/Association_football\">Football Wikipedia</a></string>";
-        moreInfo.add(fromHtml(str5));
 
         listHash.put(listTitleHeader.get(0),basicRules);
         listHash.put(listTitleHeader.get(1),fouls);
         listHash.put(listTitleHeader.get(2),competitonDom);
         listHash.put(listTitleHeader.get(3),competitonInt);
-        listHash.put(listTitleHeader.get(4),moreInfo);
 
     }
 
@@ -231,8 +230,6 @@ public class DetailSportActivity extends AppCompatActivity {
         listTitleHeader.add("Position players");
         listTitleHeader.add("Rules and regulations");
         listTitleHeader.add("Violations");
-        listTitleHeader.add("More info");
-
 
         List<Spanned> overview = new ArrayList<>();
         String str1 = "A team can score a field goal by shooting the ball through the basket being defended by the opposition" +
@@ -285,22 +282,16 @@ public class DetailSportActivity extends AppCompatActivity {
                 "clock and the offensive team is given possession of the ball out of bounds.";
         violations.add(fromHtml(str4));
 
-        List<Spanned> moreInfo = new ArrayList<>();
-        String str5 = "<string name=\"my_link\"><a href=\"https://en.wikipedia.org/wiki/Basketball\">Basketball Wikipedia</a></string>";
-        moreInfo.add(fromHtml(str5));
-
         listHash.put(listTitleHeader.get(0),overview);
         listHash.put(listTitleHeader.get(1),players);
         listHash.put(listTitleHeader.get(2),rules);
         listHash.put(listTitleHeader.get(3),violations);
-        listHash.put(listTitleHeader.get(4),moreInfo);
     }
 
     private void setTennisInfo() {
         listTitleHeader.add("Scoring");
         listTitleHeader.add("Officials");
         listTitleHeader.add("Court Lines");
-        listTitleHeader.add("moreInfo");
 
 
         List<Spanned> scoring = new ArrayList<>();
@@ -362,14 +353,12 @@ public class DetailSportActivity extends AppCompatActivity {
         listHash.put(listTitleHeader.get(0),scoring);
         listHash.put(listTitleHeader.get(1),officials);
         listHash.put(listTitleHeader.get(2),courtLines);
-        listHash.put(listTitleHeader.get(3),moreInfo);
     }
 
     private void setBaseballInfo() {
         listTitleHeader.add("Overview");
         listTitleHeader.add("Player rosters");
         listTitleHeader.add("No clock to kill");
-        listTitleHeader.add("moreInfo");
 
 
         List<Spanned> overview = new ArrayList<>();
@@ -414,22 +403,16 @@ public class DetailSportActivity extends AppCompatActivity {
                 " giving up any faint chance at a win to avoid a loss.[133] Baseball offers no such reward for conservative batting.";
         clock.add(fromHtml(str3));
 
-        List<Spanned> moreInfo = new ArrayList<>();
-        String str4 = "<string name=\"my_link\"><a href=\"https://en.wikipedia.org/wiki/baseball\">Baseball Wikipedia</a></string>";
-        moreInfo.add(fromHtml(str4));
 
         listHash.put(listTitleHeader.get(0),overview);
         listHash.put(listTitleHeader.get(1),player);
         listHash.put(listTitleHeader.get(2),clock);
-        listHash.put(listTitleHeader.get(3),moreInfo);
     }
 
     private void setBoxingInfo() {
         listTitleHeader.add("Rules");
         listTitleHeader.add("Boxing styles");
         listTitleHeader.add("Punches");
-        listTitleHeader.add("moreInfo");
-
 
         List<Spanned> rules = new ArrayList<>();
         String str1 = "A boxing match typically consists of a determined number of three-minute rounds, " +
@@ -522,7 +505,255 @@ public class DetailSportActivity extends AppCompatActivity {
         listHash.put(listTitleHeader.get(0),rules);
         listHash.put(listTitleHeader.get(1),style);
         listHash.put(listTitleHeader.get(2),punches);
-        listHash.put(listTitleHeader.get(3),moreInfo);
+    }
+
+    private void setAmericanFootballInfo() {
+        listTitleHeader.add("Teams and positions");
+        listTitleHeader.add("Scoring");
+        listTitleHeader.add("Leagues and tournaments");
+
+        List<Spanned> position = new ArrayList<>();
+        String str1 = "A football game is played between two teams of <b>11 players</b> each. Playing with more on the field" +
+                " is punishable by a penalty. Teams may substitute any number of their players between downs;" +
+                " this \"platoon\" system replaced the original system, which featured limited substitution rules," +
+                " and has resulted in teams utilizing specialized offensive, defensive and special teams squads.<br><br>" +
+                "Individual players in a football game must be designated with a <b>uniform number between 1 and 99</b>. NFL teams" +
+                " are required to number their players by a league-approved numbering system, and any exceptions must be" +
+                " approved by the Commissioner. NCAA and NFHS teams are \"strongly advised\" to number their offensive" +
+                " players according to a league-suggested numbering scheme." +
+                "<br><br><b>Offensive unit</b>" +
+                "<br><br>The offensive team must line up in a legal formation before they can snap the ball. An offensive " +
+                "formation is considered illegal if there are more than four players in the backfield or fewer than five players" +
+                " numbered 50–79 on the offensive line. <br><br>The main backfield positions are the <b>quarterback (QB), halfback/tailback " +
+                "(HB/TB) and fullback (FB)</b>. The quarterback is the leader of the offense. Either he or a coach calls the plays. Quarterbacks" +
+                " typically inform the rest of the offense of the play in the huddle before the team lines up. The quarterback lines up" +
+                " behind the center to take the snap and then hands the ball off, throws it or runs with it." +
+                "<br><br><b>Defensive unit</b>" +
+                "<br><br>The defensive line (DL) consists of <b>defensive ends (DE) and defensive tackles (DT)</b>. Defensive ends line up on " +
+                "the ends of the line, while defensive tackles line up inside, between the defensive ends. The primary responsibilities" +
+                " of defensive ends and defensive tackles is to stop running plays on the outside and inside, respectively, to pressure" +
+                " the quarterback on passing plays, and to occupy the line so that the linebackers can break through." +
+                "<br><br><b>Special teams unit</b>" +
+                "<br><br>The special teams unit is <b>responsible for all kicking plays</b>. The special teams unit of the team in control of the ball " +
+                "will try and execute field goal (FG) attempts, punts and kickoffs, while the opposing team's unit will aim to " +
+                "block or return them.";
+        position.add(fromHtml(str1));
+
+
+        List<Spanned> scoring = new ArrayList<>();
+        String str2 = "<b>The <b>touchdown</b> (TD)</b>, worth <b>six points</b>, is the most valuable scoring play in American football. A touchdown is scored when" +
+                " a live ball is advanced into, caught in, or recovered in the end zone of the opposing team. The scoring team then attempts" +
+                " a try or conversion, more commonly known as the <b>point(s)-after-touchdown (PAT)</b>, which is a single scoring opportunity." +
+                "<br><br>A <b>field goal</b> (FG), worth three points, is scored when the ball is placekicked or dropkicked through the uprights and over the crossbars" +
+                " of the defense's goalposts. After a PAT attempt or successful field goal the scoring team must kick the ball off to the other team." +
+                "<br><br> A <b>safety</b> is scored when the ball carrier is tackled in his own end zone. Safeties are worth two points, which are awarded to the defense." +
+                " In addition, the team that conceded the safety must kick the ball to the scoring team via a free kick.";
+        scoring.add(fromHtml(str2));
+
+        List<Spanned> tournament = new ArrayList<>();
+        String str3 = "The <b>National Football League (NFL)</b> and the <b>National Collegiate Athletic Association (NCAA)</b> are the most popular" +
+                " football leagues in the United States. The National Football League was founded in 1920 and has since become the" +
+                " largest and most popular sport in the United States. The NFL has the highest average attendance of any " +
+                "sporting league in the world, with an average attendance of 66,960 during the 2011 NFL Season. The NFL championship" +
+                " game is called the <b>Super Bowl</b>, and is among the biggest events in club sports worldwide. It is played between" +
+                " the champions of the National Football Con    ference (NFC) and the American Football Conference (AFC), " +
+                "and its winner is awarded the Vince Lombardi Trophy.";
+        tournament.add(fromHtml(str3));
+
+
+        listHash.put(listTitleHeader.get(0),position);
+        listHash.put(listTitleHeader.get(1),scoring);
+        listHash.put(listTitleHeader.get(2),tournament);
+    }
+
+    private void setGolfInfo() {
+        listTitleHeader.add("Overview");
+        listTitleHeader.add("Play of the game");
+        listTitleHeader.add("Golf club");
+
+        List<Spanned> overview = new ArrayList<>();
+        String str1 = "Golf, unlike most ball games, cannot and does not utilize a standardized playing area, " +
+                "and coping with the varied terrains encountered on different courses is a key part of the game." +
+                "<br><br>The game at the highest level is played on a course with an arranged progression of <b>18 holes</b>," +
+                " though recreational courses can be smaller, usually 9 holes. <br>Each hole on the course must contain a" +
+                " <b>tee box</b> to start from, and a <b>putting green</b> containing the actual hole or cup (4.25 inches in diameter)." +
+                "<br><br>There are other standard forms of terrain in between, such as the <b>fairway, rough (long grass), sand traps " +
+                "(or \"bunkers\"), and various hazards (water, rocks, fescue)</b> but each hole on a course is unique in its specific" +
+                " layout and arrangement.<br><br>" +
+                "Golf is played for the <b>lowest number of strokes</b> by an individual, known as stroke play, or the lowest score on" +
+                " the most individual holes in a complete round by an individual or team, known as match play. <b>Stroke play</b> is the most" +
+                " commonly seen format at all levels, but most especially at the elite level.";
+        overview.add(fromHtml(str1));
+
+        List<Spanned> play = new ArrayList<>();
+        String str2 = "When the initial shot on a hole is intended to move the ball a long distance (typically more than 225 yards " +
+                "(210 m)), the shot is commonly called a \"<b>drive</b>\" and is generally made with a long-shafted, large-headed" +
+                " wood club called a \"driver\".<br>Shorter holes may be initiated with other clubs, such as higher-numbered " +
+                "woods or irons.<br><br>Once the ball comes to rest, the golfer strikes it again as many times as necessary using" +
+                " shots that are variously known as a \"<b>lay-up</b>\", an \"<b>approach</b>\", a \"<b>pitch</b>\", or a \"<b>chip</b>" +
+                "\", until the ball reaches the green, where he or she then \"putts\" the ball into the hole (commonly called <b>\"" +
+                "sinking the putt\" or \"holing out\"</b>). <br><br>The goal of getting the ball into the hole (\"holing\" the ball)" +
+                " in as few strokes as possible may be impeded by obstacles such as areas of longer grass called" +
+                " <b>\"rough\"</b> (usually found alongside fairways), which both slows any ball that contacts it and makes it harder" +
+                " to advance a ball that has stopped on it; <b>\"doglegs\"</b>, which are changes in the direction of the fairway that" +
+                " often require shorter shots to play around them; <b>bunkers</b> (or sand traps); and <b>water hazards</b> such as ponds or " +
+                "streams.";
+        play.add(fromHtml(str2));
+
+        List<Spanned> club = new ArrayList<>();
+        String str3 = "The golfer chooses a <b>golf club, grip, and stroke</b> appropriate to the distance:" +
+                "<br><br>• The <b>\"drive\"</b> or <b>\"full swing\"</b> is used on the teeing ground and fairway, typically with" +
+                " a wood or long iron, to produce the maximum distance capable with the club. In the extreme, the windup can end with " +
+                "the shaft of the club parallel to the ground above the player's shoulders." +
+                "<br><br>• The <b>\"approach\"</b> or <b>\"3/4 swing\"</b> is used in medium- and long-distance situations where an exact" +
+                " distance and good accuracy is preferable to maximum possible distance, such as to place the ball on the green or " +
+                "\"lay up\" in front of a hazard. The windup or \"backswing\" of such a shot typically ends up with the shaft of the club" +
+                " pointing straight upwards or slightly towards the player." +
+                "<br><br>• The <b>\"chip\"<b> or </b>\"half-swing\"</b> is used for relatively short-distance shots near the green," +
+                " with high-lofted irons and wedges. The goal of the chip is to land the ball safely on the green, allowing it to roll" +
+                " out towards the hole. It can also be used from other places to accurately position the ball into a more advantageous" +
+                " lie. The backswing typically ends with the head of the club between hip and head height." +
+                "<br><br>• The <b>\"putt\"</b> is used in short-distance shots on or near the green, typically made with the eponymous \"putter\"," +
+                " although similar strokes can be made with medium to high-numbered irons to carry a short distance in the air and then" +
+                " roll (a <b>\"bump and run\")</b>. <br>The backswing and follow-through of the putt are both abbreviated compared to other strokes," +
+                " with the head of the club rarely rising above the knee. The goal of the putt is usually to put the ball in the hole," +
+                " although a long-distance putt may be called a \"lag\" and is made with the primary intention of simply closing distance" +
+                " to the hole or otherwise placing the ball advantageously.";
+        club.add(fromHtml(str3));
+
+        List<Spanned> moreInfo = new ArrayList<>();
+        String str4 = "<string name=\"my_link\"><a href=\"https://en.wikipedia.org/wiki/Golf\">Golf Wikipedia</a></string>";
+        moreInfo.add(fromHtml(str4));
+
+        listHash.put(listTitleHeader.get(0),overview);
+        listHash.put(listTitleHeader.get(1),play);
+        listHash.put(listTitleHeader.get(2),club);
+    }
+
+    private void setHockeyInfo() {
+        listTitleHeader.add("Overview");
+        listTitleHeader.add("Penalties");
+        listTitleHeader.add("Periods and overtime");
+
+        List<Spanned> overview = new ArrayList<>();
+        String str1 = "Ice hockey is played on a hockey rink. During normal play, there are six players per side on the ice" +
+                " at any time, one of them being the goaltender, each of whom is on ice skates. " +
+                "<br>The objective of the game is to score goals by shooting a hard vulcanized rubber disc, <b>the puck</b>," +
+                " into the opponent's goal net, which is placed at the opposite end of the rink. " +
+                "The players use their sticks to pass or shoot the puck." +
+                "<br><br>Between the <b>six players</b> on the ice, they are typically divided into three forwards, two defencemen," +
+                " and a goaltender. The term skaters is typically used to describe all players who are not goaltenders. " +
+                "<br><br>The <b>forward positions</b> consist of a centre and two wingers: a left wing and a right wing. Forwards " +
+                "often play together as units or lines, with the same three forwards always playing together. " +
+                "<br>The <b>defencemen</b> usually stay together as a pair generally divided between left and right. Left and right" +
+                " side wingers or defencemen are generally positioned as such, based on the side on which they carry their stick." +
+                " <br>A <b>substitution</b> of an entire unit at once is called a line change. Teams typically employ alternate sets of" +
+                " forward lines and defensive pairings when shorthanded or on a power play. " +
+                "<br>The <b>goaltender</b> stands in a, usually blue, semi-circle called the crease in the defensive zone keeping pucks" +
+                " from going in. " +
+                "<br><br><b>Substitutions</b> are permitted at any time during the game, although during a stoppage of play the home " +
+                "team is permitted the final change. When players are substituted during play, it is called <b>changing on the fly</b>." +
+                " A new NHL rule added in the 2005–06 season prevents a team from changing their line after they ice the puck.";
+        overview.add(fromHtml(str1));
+
+        List<Spanned> penalties = new ArrayList<>();
+        String str2 = "In ice hockey, infractions of the rules lead to play stoppages whereby the play is restarted at a face off. " +
+                "Some infractions result in the imposition of a penalty to a player or team. In the simplest case, the offending player" +
+                " is sent to the <b>\"penalty box\"</b> and their team has to play with one less player on the ice for a designated amount" +
+                " of time. <br><b>Minor penalties</b> last for two minutes, <b>major penalties</b> last for five minutes, and a " +
+                "<b>double minor penalty</b> is two consecutive penalties of two minutes duration." +
+                "<br><br>A <b>\"penalty shot\"</b> is awarded to a player when the illegal actions of another player stop a clear scoring " +
+                "opportunity, most commonly when the player is on a <b>\"breakaway\"</b>. A penalty shot allows the obstructed player to pick" +
+                " up the puck on the centre red-line and attempt to score on the goalie with no other players on the ice, to compensate for " +
+                "the earlier missed scoring opportunity.";
+        penalties.add(fromHtml(str2));
+
+        List<Spanned> periods = new ArrayList<>();
+        String str3 = "A professional game consists of <b>three \"periods\" of twenty minutes</b>, the clock running only when the puck is in " +
+                "play. The teams change ends after each period of play, including overtime. Recreational leagues and children's leagues often" +
+                " play shorter games, generally with three shorter periods of play." +
+                "<br><br>Various procedures are used if a tie occurs. In tournament play, as well as in the NHL playoffs, North Americans favour" +
+                " sudden death overtime, in which the teams continue to play <b>twenty-minute periods</b> until a goal is scored. Up until the" +
+                " 1999–2000 season regular season NHL games were settled with a single five-minute sudden death period with five players " +
+                "(plus a goalie) per side, with both teams awarded one point in the standings in the event of a tie. " +
+                "With a goal, the winning team would be awarded two points and the losing team none (just as if they had lost in regulation)." +
+                "<br><br>The overtime mode for the <b>NHL playoffs</b> differ from the regular season. In the playoffs there are no shootouts nor ties." +
+                " If a game is tied after regulation an additional 20 minutes of 5 on 5 sudden death overtime will be added. " +
+                "In case of a tied game after the overtime, multiple 20-minute overtimes will be played until a team scores, which wins" +
+                " them the match.";
+        periods.add(fromHtml(str3));
+
+
+        listHash.put(listTitleHeader.get(0),overview);
+        listHash.put(listTitleHeader.get(1),penalties);
+        listHash.put(listTitleHeader.get(2),periods);
+    }
+
+    private void setWaterpoloInfo() {
+        listTitleHeader.add("Overview");
+        listTitleHeader.add("Players and Positions");
+        listTitleHeader.add("Common techniques");
+
+        List<Spanned> overview = new ArrayList<>();
+        String str1 = "<b>Water polo</b> is a competitive team sport played in the water between two teams. The game " +
+                "consists of <b>four quarters</b>, in which the two teams attempt to score goals and throw the ball into their" +
+                " opponent's goal.<br>The team with the most goals at the end of the game wins the match. Each team made up " +
+                "of <b>six field players and one goalkeeper</b>. Except for the goalkeeper, players participate in both offensive " +
+                "and defensive roles. Water polo is typically played in an all-deep pool seven feet (or two meters) deep.";
+        overview.add(fromHtml(str1));
+
+        List<Spanned> players = new ArrayList<>();
+        String str2 = "There are seven players in the water from each team at one time. There are six players that play" +
+                " out and one goalkeeper. Unlike most common team sports, there is little positional play; field players" +
+                " will often fill several positions throughout the game as situations demand.<br>These positions usually" +
+                " consist of a <b>center forward, a center back, the two wing players and the two drivers</b>. Players who are" +
+                " skilled in all positions of offense or defense are called utility players. <b>Utility players</b> tend to come " +
+                "off of the bench, though this is not absolute.<br> Certain body types are more suited for particular positions," +
+                " and left-handed players are especially coveted on the right-hand side of the field, allowing teams to launch" +
+                " 2-sided attacks." +
+                "<br><br><b>Offense</b>" +
+                "<br><br>The offensive positions include: one <b>center forward</b> (also called a \"set\", \"hole-set\", \"center\", " +
+                "\"setter\", \"hole\", or \"2-meter man\", located on or near the 2-meter, roughly in the center of the goal)," +
+                " <b>two wings</b> (located on or near the 2-meter, just outside of the goal posts, respectively), <b>two drivers</b> (also " +
+                "called \"flats\", located on or near the 5-meter, roughly at the goal posts, respectively), and one \"point\"" +
+                " (usually just behind the 5 meter, roughly in the center of the goal, respectively), positioned farthest from the goal." +
+                "<br><br>Beginning with the offensive wing to the opposing goalies right side is called <b>one</b>. The flat in a counter" +
+                " clockwise from one is called <b>two</b>. Moving along in the same direction the point player is <b>three</b>, the next flat is" +
+                " <b>four</b>, the final wing is <b>five</b>, and the hole set is called <b>six</b>. Additionally, the position in which a player is can" +
+                " give advantages based on a player's handedness, to improve a shooting or passing angle (for example, the right wing" +
+                " is often left handed). " +
+                "<br><br><b>Defense</b>" +
+                "<br><br>Defensive positions are often the same, but just switched from offense to defense. For example, the center forward" +
+                " or hole set, who directs the attack on offense, on defense is known as \"<b>hole D</b>\" (also known as set guard, hole guard," +
+                " hole check, pit defense or two-meter defense), and guards the opposing team's center forward (also called the hole). " +
+                "<br><br><b>Goalkeeper</b>" +
+                "<br><br>The goalkeeper has the main role in blocking shots against the goal as well as guiding and informing their defense" +
+                " of imposing threats and gaps in the defense. The goalkeeper is also the \"<b>quarterback</b>\", as he or she usually begins" +
+                " the offensive play. It is not unusual for a goalie to make the assisting pass to a goal on a break away" +
+                "The goalkeeper is given several <b>privileges</b> above those of the other players, but only if he or she is within the five" +
+                " meter area in front of his or her goal:<br><br>" +
+                "• The ability to punch the ball with a clenched fist.<br>" +
+                "• The ability to touch the ball with two hands.<br>" +
+                "• The ability to touch the bottom of the pool.";
+        players.add(fromHtml(str2));
+
+        List<Spanned> common = new ArrayList<>();
+        String str3 = "<br><b>Offense strategy</b><br><br>" +
+                "The most basic positional set up is known as a \"<b>3–3</b>\", so called because there are two lines in front of the opponent's " +
+                "goal. Another set up, used more by professional teams, is known as an <b>\"arc\", \"umbrella\", or \"mushroom\"</b>; perimeter" +
+                " players form the shape of an arc around the goal, with the hole set as the handle or stalk. Yet another option for" +
+                " offensive set is called a 4–2 or double hole; there are two center forward offensive players in front of the goal." +
+                " <br>Double hole is most often used in \"man up\" situations, or when the defense has only one skilled \"hole D\", or to" +
+                " draw in a defender and then pass out to a perimeter player for a shot (\"kick out\")." +
+                "<br><br><b>Defense strategy</b>" +
+                "<br><br>On defense, the players work to regain possession of the ball and to prevent a goal in their own net. The defense" +
+                " attempts to knock away or steal the ball from the offense or to commit a foul in order to stop an offensive player " +
+                "from taking a goal shot. The defender attempts to stay between the attacker and the goal, a position known as inside water.";
+        common.add(fromHtml(str3));
+
+        listHash.put(listTitleHeader.get(0),overview);
+        listHash.put(listTitleHeader.get(1),players);
+        listHash.put(listTitleHeader.get(2),common);
     }
 
 
